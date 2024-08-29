@@ -1,0 +1,84 @@
+0828 공부 내용
+git, github, vsc 연동 완료
+sourcetree 사용법은 보기는 했으나 아직 쓸 때는 아닌 것 같바오미
+githubdesktop도 트라이 해봄
+
+변경사항
+
+0829 공부 내용
+알고리즘_https://velog.io/@ngngs/%ED%95%9C-%EC%9E%A5%EC%9C%BC%EB%A1%9C-%EB%B3%B4%EB%8A%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98
+백준 todo0157계정, python으로 문풀시작 
+2753
+10871
+8958
+4344
+11654
+1152
+
+1. map 함수란?
+python 오랜만에 해서 map함수
+형태: map(함수, 반복가능한객체)
+장점: 코드를 간결하게 만들고, 큰 데이터셋에 대해 효율적으로 작동함.
+lazy evaluation을 활용해서 메모리 사용을 최적화 할 수 있다
+
+2. lazy evaluation(지연 평가)란?
+정의: 계산의 결과값이 필요할 때까지 계산을 미루는 기법
+효율성과 성능 향상을 위해 사용되며, 대용량 데이터나 무한 시퀸스를 다룰 때 유용함
+
+-> 마치 수학 문제 풀 때 
+특정 변수 계산 바로 안하고, 답 내는 과정이 다 나오면
+푸는 것과 같다..
+
+장점: 
+    1. 메모리 사용 최적화
+    2. 불필요한 계산 회피
+    3. 무한 데이터 구조 처리 가능
+    4. 복잡한 연산의 효율적 처리
+
+단점: 
+    1. 디버깅이 어려울 수 있음
+    2. 일부 상황에서 성능 오버헤드 발생 가능
+    3. side effects가 있는 함수와 함께 시 주의 필요 
+
+# 리스트 컴프리헨션 (즉시 평가)
+squares = [x**2 for x in range(1000000)]
+
+# 제너레이터 표현식 (지연 평가)
+lazy_squares = (x**2 for x in range(1000000))
+>>> list comprehension은 모든 결과를 즉시 계산하고, 메모리에 저장하지만
+generation comprehensino은 필요할 때만 계산한다.
+
+3. input().split() 사용 주의점
+input().split()은 문자열 리스트를 반환한다
+따라서, N, X = int(input().split()) 코드는 오류가 발생한다
+>> map 함수를 쓰거나 개별 변환해야함
+
+4. 연속된 값들을 분리하는 법_4344
+>>> 하나의 list로 받고 그 다음 두 개의 list로 분리한다.
+
+5. f-string
+형태: print(f"{rat:.3f}%")
+
+6. sum 함수
+형태: sum(iterable, start=0)
+iterable: 합계를 계산할 요소들의 집합 (예: 리스트, 튜플, 집합 등)
+start: 선택적 매개변수로, 합계에 더할 초기값 (기본값은 0)
+
+ex1)_시작값 지정
+numbers = [1, 2, 3, 4, 5]
+total = sum(numbers, 10)
+print(total)  # 출력: 25 (10 + 1 + 2 + 3 + 4 + 5)
+
+ex2)_일반 표현식 
+total = sum(x for x in range(1, 101))
+print(total)  # 출력: 5050 (1부터 100까지의 합)
+
+ex3)_2차원 리스트 
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+total = sum(sum(row) for row in matrix)
+print(total)  # 출력: 45
+
+7. 아스키 코드 함수_11654
+문자 -> 숫자 변환: ord()
+숫자 -> 문자 변환: chr()
+
