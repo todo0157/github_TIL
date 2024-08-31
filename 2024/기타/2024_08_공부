@@ -8,6 +8,7 @@ githubdesktop도 트라이 해봄
 0829 공부 내용
 코테 준비_https://young-taek.tistory.com/146
 알고리즘_https://velog.io/@ngngs/%ED%95%9C-%EC%9E%A5%EC%9C%BC%EB%A1%9C-%EB%B3%B4%EB%8A%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98
+파트1: 7개, 2: 16개
 백준 todo0157계정, python으로 문풀시작 
 2753
 10871
@@ -156,4 +157,42 @@ Excel 파일(.xlsx, .xlsm, .xltx, .xltm)을 읽고 쓰는 데
 코테 강의_https://blog.encrypted.gg/919
 
 -- 바킹독 강의 -- 
-Ot 완료
+>>> 단원별로 1~2일, 매일 1시간씩이라도 확보해서 하자, 12월 31일까지 완강
+Ot 
+수강 계획 짬 
+0x01강
+컴퓨터는 1초에 3~5억개의 연산 가능
+시간복잡도:입력의 크기와 문제를 해결하는데 걸리는 시간의 상관관계
+빅오 표기법: 주어진 식을 값이 가장 큰 대표항만 남겨서 나타내는 방식
+공간복잡도: 입력의 크기와 문제를 해결하는데 필요한 공간의 상관관계
+512MB = 1.2억개의 int 선언이 가능
+char 자료형 1byte = 8bit
+unsigned char VS char
+범위: 0~255         -128~127
+int >> 4byte, 2^31-1 ~= 2.1*10^9(21억)
+
+Inter Overflow: 
+127+1 같은 거 할 때 
+이진수 계산에서는 -128로 변하는 오류가 발생
+>>> 해결책: 
+각 자료형의 범위에 맞는 값을 가지게끔 연산시킨다
+
+float 4 byte, double 8 byte 
+> sign, exponent, fraction부가 존재 
+
+실수의 주요 성질 
+1. 실수의 저장/연산 과정에서는 반드시 오차가 존재
+float: 유효숫자 6자리
+double: 유효숫자 15자리
+
+2. 그래서, double에 long long 버위의 정수를 함부로 담으면 안된다
+long long은 유효숫자가 19자리임
+
+3. 실수를 비교할 때는 등호를 사용하면 안된다
+
+
+>>> 듣다보니 C,C++ 다시 공부해야할듯
+https://modoocode.com/231
+-- C 강의 --
+2-2까지 완료.
+C 이후에 C++ 들어가는 방식으로 진행,, 
