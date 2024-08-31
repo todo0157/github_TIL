@@ -1,11 +1,12 @@
 0828 공부 내용
 git, github, vsc 연동 완료
-sourcetree 사용법은 보기는 했으나 아직 쓸 때는 아닌 것 같바오미
+sourcetree 사용법은 보기는 했으나 아직 쓸 때는 아닌 것 같아보임
 githubdesktop도 트라이 해봄
 
 변경사항
 --------------------
 0829 공부 내용
+코테 준비_https://young-taek.tistory.com/146
 알고리즘_https://velog.io/@ngngs/%ED%95%9C-%EC%9E%A5%EC%9C%BC%EB%A1%9C-%EB%B3%B4%EB%8A%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98
 백준 todo0157계정, python으로 문풀시작 
 2753
@@ -85,6 +86,7 @@ print(total)  # 출력: 45
 
 --------------------------------------
 0830 공부 내용 
+-- 백준 -- 
 2869_달팽이 문제
 1978_소수 판정 
 10872_팩토리얼_재귀
@@ -148,3 +150,10 @@ days = (V-B) / (A-B)
 Python에서 
 Excel 파일(.xlsx, .xlsm, .xltx, .xltm)을 읽고 쓰는 데 
 사용되는 라이브러리
+
+---------------
+0831 공부 내용
+코테 강의_https://blog.encrypted.gg/919
+
+-- 바킹독 강의 -- 
+Ot 완료
