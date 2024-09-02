@@ -1,0 +1,37 @@
+1주차 Review_~8/31
+-- 주요 키워드 --
+1. map함수
+2. lazy evaluation
++ list comprehension_즉시 VS generation evaluation_지연
+3. input().split()
+4. sum함수
+5. 달팽이 문제_ days = (V-B) / (A-B)
+6. 소수 판정 알고리즘
+에라토스테네스의 체, 6k+-1, 밀러-라빈 소수 판정법
+7. 하노이 탑
+8. N-Queen_백트래킹 알고리즘
+
+-- 프젝 진행 상황 정리 --
+- phonenumregister -
+>> netlify 활용하는 방식으로 다시 해봐야하는 상황
+
+-- 바킹독 --
+시간/공간복잡도, 빅오 표기법, 
+512MB = 1.2억개 int 선언 가능
+char = 1byte
+unsigned char VS char
+int = 4byte, 2.1*10^9, 21억
+Inter Overflow:이진수 계산에서의 오류 발생
+float, double_sign, exponent, fraction부
+실수의 주요 성질 
+1. 실수의 저장/연산에는 반드시 오차 존재
+float_6자리,double_15자리
+2. double에 long long 범위 정수를 담으면 오류 발생 가능
+longlong은 19자리가 유효숫자임
+3. 실수 비교 시에 등호 사용 금지
+
+++ 추가 정리 ++
+밀러-라빈 판정법이란? 
+어떤 수가 소수인지 "확률적으로" 확인하는 방법
+원리가 좀 어려움, 그리고 확률적인 알고리즘이라
+에라토스테네스의 체나 6k+-1 방식이 빠르고 단순한듯 
