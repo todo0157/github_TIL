@@ -15,6 +15,7 @@ C,C++_주 2~3 chapter씩 하기
 31강
 >> 4개월
 문제 링크_https://github.com/encrypted-def/basic-algo-lecture/blob/master/workbook.md
+연습 문제 0x02강_2309번 이어서 
 
 모코_C,C++_https://modoocode.com/231
 C: 23강, C++: 22강
@@ -139,3 +140,75 @@ XOR 연산자(^): 서로 달라야 1
 - 오버플로우
 자료형의 최대 표현 범위보다 큰 수를 대입해서 발생하는 문제 
 %u >> unsigned 타입으로 해석
+
+-- 바킹독 --
+0x03강 - 배열
+추가 학습: Cache hit rate
+- 0x00. 정의와 성질
+자료구조로써의 배열: 메모리 상에 원소를 연속하게 배치한 자료구조 
+성질 >> 코테에는 1번만 유념하면 충분 
+1. O(1)에 k번째 원소를 확인/변경 가능
+2. 추가적으로 소모되는 메모리의 양(=overhead)가 거의 없다
+3. Cache hit rate이 높다
+4. 메모리 상에 연속한 구간을 잡아야 해서 할당에 제약이 걸린다 
+
+- 0x01. 기능과 구현
+1. 기능
+임의의 위치에 있는 원소 확인/변경, 
+원소를 끝에 추가, 마지막 원소 제거  >>> O(1)
+임의의 위치(처음, 마지막 제외)에 원소를 추가/제거 >>> O(N)
+
+2. 구현
+insert 함수, erase 함수 
+
+3. 사용팁
+전체를 특정 값으로 초기화시킬 때 
+1. 그냥 for문 도는 방식 
+int a[21]
+for (int i =0 : i < 21: i++)
+2. (추천) fill 함수 이용
+fill(a,a+21,0)
+>> 1번째 위치부터 21번째 위치까지 0으로 초기화시킴
+
+- 0x02. STL vector
+배열과 동일한 기능을 수행하나
+vector의 경우 배열과 다르게 크기를 자유롭게 변경할 수 있음 
+
+- vector에서는 "="을 사용하면 deep copy가 발생하여
+v4= v3 같이 선언 하면, 
+이후에 v4를 수정해도
+v3에는 영향을 미치지 않는다 
+
+- for 문의 다른 표현방식_range-based for loop
+vector<int> v1 = {1,2,3,4,5,6};
+for (int e:v1)
+    cout << e << " ";
+>> e에 v1의 원소들이 하나씩 들어가는 for 문임
+
+vector의 size 메소드는
+unsigned int 또는 unsigned long long을 반환함
+이 때문에 오버플로우가 발생하기도 하므로 주의 
+
+0x03. 연습 문제 
+1번. 아스키 코드를 활용하는 방식이 특이함 
+string s, s는 입력 받는 값
+for (auto c: s)
+freq[c-'a']++ 같이 진행하면
+c - 'a' = 0~25 사이의 값이 나온다 
+
+2번. 합이 100인 서로 다른 위치의 두 원소가 존재하면 1 존재하지 않으면 0을 반환하는
+함수 func2(int arr[], int N)을 작성하라
+시간 복잡도는 O(N)으로 제한
+즉, 이중 for문 금지 
+>>> 배열 활용하는 방법,, 배열을 이중으로쓰면 O(N)으로 처리 가능 
+
+int func2(int arr[], int N){
+  int occur[101] = {};
+  for(int i = 0; i < N; i++){
+    if(occur[100-arr[i]] == 1)
+      return 1;
+    occur[arr[i]] = 1;
+  }
+  return 0;
+}
+
