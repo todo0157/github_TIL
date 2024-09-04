@@ -15,7 +15,7 @@ C,C++_주 2~3 chapter씩 하기
 31강
 >> 4개월
 문제 링크_https://github.com/encrypted-def/basic-algo-lecture/blob/master/workbook.md
-연습 문제 0x02강_2309번 이어서 
+연습 문제 0x02강_1267번 이어서, 0x03강_처음부터
 
 모코_C,C++_https://modoocode.com/231
 C: 23강, C++: 22강
@@ -211,4 +211,13 @@ int func2(int arr[], int N){
   }
   return 0;
 }
+
+-----------
+0904
+-- 바킹독 연습 문풀 -- 
+- 2309_일곱난쟁이
+9명 중 키의 합이 100,, 모두 더한 상태에서 2명 빼버리는 구조. 
+- 10093_숫자
+int 써서 출력 초과 나옴
+숫자 범위 때문에 long long을 써야 돌아간다 
 
