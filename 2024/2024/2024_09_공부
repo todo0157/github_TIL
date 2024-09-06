@@ -15,12 +15,24 @@ C,C++_주 2~3 chapter씩 하기
 31강
 >> 4개월
 문제 링크_https://github.com/encrypted-def/basic-algo-lecture/blob/master/workbook.md
-연습 문제 0x02강_1267번 이어서, 0x03강_처음부터
+연습 문제_0x03강_처음부터
 
 모코_C,C++_https://modoocode.com/231
 C: 23강, C++: 22강
 총 45챕터
 >> 4개월 
+-------------
+추가 사이트 
+1. 생활 코딩(C/C++은없음)
+https://opentutorials.org/course/1
+
+2. SOEN
+http://www.soen.kr/
+C: 20강, C++: 18강 
+3. 파일의 IT 블로그
+https://pgh268400.tistory.com/5?category=1072473%20
+C 20강
+
 --------------
 0902 
 바킹독 0x02강
@@ -246,3 +258,100 @@ for (int i = 1; i <= 10000; i++) {
     }
 }
 
+------------
+0906
+-- 모코 -- >> 현재 사이트 접속 안되는 상황이라 일단 패스하고 바킹독 연습 문풀 진행 
+-- 파일 IT로 대체
+- 4-1. scanf로 입력받기
+scanf("% d", &num);
+>> &가 있어야 함수, 변수 이름 앞에 &을 붙이면 그 변수의 메모리 주소가 나온다 
+scanf로 double 값을 입력받을 때는 반드시 %lf를 써야한다
+- 4-2. 왜 scanf 에서는 %lf로 입력받아야하는지 설명해줌
+%f와 %lf의 처리 방식은 동일함
+printf에서 float값이 전달되면 "기본 인자 진급"을 통해
+자동으로 double 형으로 진급이 된다
+이때, "포인터는 진급 대상에서 제외"임
+
+scanf는 인수로 포인터를 받는데
+결국 전달받는 포인터의 자료형을 알 수 없음
+따라서, 이를 명시해주기 위해서 %lf와 %f를 구분해줘야함
+
+- 5.1 상수 이용하기_Literal, Symbolic
+리터럴 상수: 글자 그래도 의미가 있는 상수
+정수형, 실수형 상수, 문자 상수, 문자열 상수 등등
+
+* 문자 상수 > ''로 묶고, %c
+문자열 상수 > ""로 묶음, %s로 묶음
+
+심볼릭 상수:상수를 기호화하여 의미있는 이름으로 지어서 쓰는 방법
+const double PI = 3.14;
+가능하면, 대문자로 설정
+주의 >> 선언과 동시에 초기화를 해줘야한다,, 아니면 NULL값이 들어가서 에러발생함
+
+"#define PI = 3.14"처럼 상수를 정의할 수도 있다,,
+
+- 5.2 보수 개념
+1,2의 보수 처리 방식 처럼, 10,9 보수 처리 방식도 똑같다,,
+
+-- 바킹독 연습 문풀 --
+- 1267
+함수 설정하는 방법 
+"int is_M(int num){
+    return 15 * (num / 60 + 1);  
+}" 이런 식으로 작성, "자료형 함수명(자료형 변수){}"꼴
+
+- 10804
+"reverse" 함수 활용
+"reverse(num+a, num+b+1);" >> num배열을 a부터 b까지의 값들을 반전시킴 
+전체 reverse와 부분 반전 코드 사이에 차이가 존재한다
+"std::vector<int> vec = {1, 2, 3, 4, 5};
+
+// Reverse the entire vector
+std::reverse(vec.begin(), vec.end());" >>> 전체 reverse 
+
+"swap" 함수 활용
+swap(a, b) >> a,b의 Type이 같아함
+기능: exchanges the values of a and b
+
+- 15552_ios::, cin 활용
+빠른 출력에 쓰이는 2가지 명령어.
+
+- 2438_별찍기
+for (int i = 1; i <=N; i++){
+    "cout << "*"*i<<"\n";"
+}
+- 2439_별찍기2
+>> C++에서는 "*"*i와 같은 기능 제공 x
+대신, string(i, '')으로 써야함
+i번만큼 "*"을 반복한다는 의미
+주의사항은 '' 대신 ""으로 쓰면 XXXX
+
+- 2440,2441,2442
+"
+int j = 0;
+for( ; j < i; j++)  cout << ' ';
+for( ; j < N; j++)  cout << '*';
+" >> 이런 식으로 for 문 작성할 수 있음
+- 2443_별찍기6_출력초과
+무한 루프 발생하는 경우 출력 초과가 뜰 수 있음 
+-2444,2445,2446 완료
+- 2562_최댓값 찾기
+"
+  for(int i = 1; i < 10; i++){
+    cin >> n;
+    // 전역변수의 초기값은 0이므로 바로 비교 가능함
+    if(maxvalue < n){
+      maxvalue = n;
+      maxindex = i;
+    }
+  }
+" >> 최댓값 처리 알고리즘 익혀두고, 전역변수의 초기값은 0이다 라는 사실.
+
+" 
+  for(int i = 0; i < 9; i++) cin >> a[i];
+  cout << *max_element(a, a+9) << '\n';
+  cout << max_element(a, a+9) - a + 1;
+}
+" 이런 식으로 max_element함수를 이용하는 방법도 가능 
+이때 "*max_element(a, a+9)" >> "value 값 출력"
+"max_element(a, a+9) - a + 1" >> "index 값 출력"
