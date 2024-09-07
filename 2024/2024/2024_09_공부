@@ -356,7 +356,7 @@ for( ; j < N; j++)  cout << '*';
 이때 "*max_element(a, a+9)" >> "value 값 출력"
 "max_element(a, a+9) - a + 1" >> "index 값 출력"
 ---------------
-0907_주차 정리 
+0907_주차 정리 완료
 -- 바킹독 연습 문풀 -- 
 0x03강 
 - 10808_알파벳 개수 
@@ -415,7 +415,7 @@ else cout << "Impossible\n";
 ++ 추가적인 상식
 C 표준 라이브러리에서 문자열을 다루는데에 유용한 함수들을 제공함
 왜? >> C에서 string(문자열)은 native한 자료형이 아님,
-그냥 문자들로 이루어진 무자열일 뿐임
+그냥 문자들로 이루어진 문자열일 뿐임
 유용한 함수들에는 
 "strcpy, strcmp,strtol,strtok,strlen,strcat"이 있음
 
