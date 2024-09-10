@@ -179,3 +179,116 @@ sort(numbers.begin(), numbers.end(), [](int a, int b))
 반드시, boolean값으로 true or false의 값을 가져야함
 만약 true 라면 순서 배치를 기존 방식대로 유지하고
 false 라면 순서 배치를 반대로 바꿈
+
+- 추가 정리 
+정석적인 연결 리스트 구현
+"
+struct NODE{
+  struct NODE *prev, *next;
+  int data;
+}
+"
+
+"포인터": 다른 변수의 메모리 주소를 저장하는 변수 
+int *p3, *p4; 
+int* p1,p2;
+>> p1,3,4는 int 타입의 포인터이나
+p2는 그냥 int 타입의 변수임
+즉, int* 으로 포인터를 표현하면 맨 앞의 변수만 포인터로 지정이 됨
+
+"구조체"
+여러 변수들을 선언하는 기준을 분류해뒀다고 보면 쉬움
+
+"nullptr", null pointer
+nullptr이 할당되면 포인터가 메모리 위치나 개체를 가리키지 않는다는 의미
+
+"*"
+1. 포인터 선언
+>> 앞에서 정리함
+2. 포인터 역참조
+>>> 이 경우 포인터 변수 앞에 "*"을 표시하면 됨
+포인터가 가리키는 메모리 위치에 저장된 값을 액세스해줌 
+
+"class"
+"private" >> class 밖에서 바로 접근 불가
+"public" >> 가능 
+---------
+0910
+-- 바킹독 -- 
+-0x05강. 스택
+0x00. 정의와 성질
+정의: 한쪽 끝에서만 원소를 넣거나 뺄 수 있는 자료구조
+FILO(First In Last Out)자료구조
+성질
+1. 원소의 추가/제거, 최상단 원소 확인 > O(1)
+2. 최상단이 아닌 나머지 원소의 확인/변경은 원칙적으로 불가능 
+(배열을 활용해 스택을 구현해서 우회적으로 확인이 가능하게 할 수는 있다)
+
+0x01. 기능과 구현
+배열을 통한 구현이 제일 간단함
+
+"
+const int MX = 10000005;
+int dat[MX];
+int pos = 0;
+"
+"pos" >>> 스택의 길이, 즉 스택 내의 원소의 수를 의미하며
+다음에 "원소가 추가될 때, 삽입해야하는 곳"을 가리키고 있음 
+
+0x02. STL stack
+push, pop, top, empty, size
+
+>>> 가능하면 "STL stack"을 쓰는 게 좋음
+"주의사항"
+스택이 비어있는데 top, pop을 호출하면 에러가 발생하므로
+스택이 비어있을 때 처리하는 경우를 따로 생각해야함
+
+
+-- 모코 -- 
+-7강. for, while
+
+for 문에서 조건 만족하면 진행하고 그 이후에 증감식 적용
+무한 for 문 >> " for(;;)"
+
+"break"와 "continue"의 차이점
+continue는 해당 조건만 이후 아래 명령들을 생략하고 넘어가는 거
+break는 모든 조건들을 생략하고 넘어감 
+
+while, do while
+>> "do while"은 일단 1회 진행하고 그 이후에 while문 들어감
+
+-- 알고리즘 -- 
+2309. 일곱 난쟁이_완전탐색
+>>> erase함수 복습 체크함
+추가로 vector 원소 삭제할 때 
+"higher index -> lower index" 순으로 삭제해야 함
+"sort함수" 사용법 복습 함. 
+
+"이중 for문"에서 inner for문의 break는 하나의 for문만 빠져나올 수 있음
+이중 for문을 한번에 탈출하는 방법
+>> 
+1. flag Variable, flag 방식
+이중 for 문 내부에 boolean 값 변수를 설정해두고, 
+inner for 문 바로 아래에 해당 boolean 변수가 true 일 때 
+break를 또 거는 방식임
+2. goto statement
+개인적으로 goto 방식이 제일 간편한듯 
+>>>
+"#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 0; i < 5; i++) {  // Outer loop
+        for (int j = 0; j < 5; j++) {  // Inner loop
+            if (i == 2 && j == 2) {  // Condition to break out of both loops
+                goto end;  // Use goto to jump out of both loops
+            }
+            cout << "i: " << i << ", j: " << j << endl;
+        }
+    }
+
+end:  // Label to jump to
+    return 0;
+}
+"
+
