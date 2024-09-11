@@ -292,3 +292,49 @@ end:  // Label to jump to
 }
 "
 
+-------------------
+0911
+-- 모코 -- 
+Ch8 >>> 생략
+Ch9. Switch문
+" 
+switch (input) {
+case 1:
+    printf("아이 맛있어 \n");
+    break;
+
+case 2:
+    printf("아이 시원해 \n");
+    break;
+
+case 3:
+    printf("zzz \n");
+    break;
+
+default:
+    printf("무슨 명령인지 못 알아 듣겠어. 왈왈 \n");
+    break;
+}
+"
+case 값은 정수만 올 수 있고, "변수"가 들어가면 안됨
+"default"는 if else에서의 else에 해당함
+"break"가 들어가야 switch 문을 빠져나올 수 있음
+
+if VS switch
+if는 순차적으로 계산을 반복(CMP연산이 늘어날 수 있음))하지만
+switch는 내부적으로 "jump table"이라는 것을 생성함
+이를 통해 모든 값의 비교를 하지 않고,
+값이 존재하는 곳으로 점프함
+(CMP 연산이 늘어나지 않고, jump table의 크기만 커져 성능에 영향을 받지 않음)
+
+-- 알고리즘 --
+-10819_차이를 최대로
+"do-while"구문
+do의 코드블록은 한번은 무조건 실행함
+그 이후 while의 조건이 True이면 do 코드 블록을 다시실행
+false이면 반복문 종료하고 다음 코드로 넘어감
+
+"next_permutation(arr.begin(), arr.end())"
+>>> 현재 배열 arr의 다음 순열을 생성하며
+다음 순열이 존재하면 "true"를
+존재하지 않고, 마지막 순열에 도달하면 "false"를 반환함
